@@ -1,0 +1,24 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka
+  profiles:
+    active: local
+  
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+    use-read-only-response-cache: false
+    response-cache-update-interval-ms: 1000
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://172.17.0.1:8761/eureka
